@@ -39,16 +39,18 @@ const UserForm = ({ jwt, setJwt }: TUserFormProps) => {
     const { firstName, lastName } = data.user;
 
     return (
-        <form className="flex flex-col gap-2 justify-center" data-jwt={jwt}>
+        <form className="flex flex-col gap-2 justify-center" data-testId="userForm" >
             <label htmlFor="firstName" className="mt-2">First Name</label>
             <input type="text" id="firstName" readOnly={true}
-                   value={firstName}
-                   className="bg-zinc-100 p-2 rounded"/>
+                value={firstName}
+                data-testId="firstNameInput"
+                className="bg-zinc-100 p-2 rounded"/>
 
             <label htmlFor="lastName" className="mt-2">Last Name</label>
             <input type="text" id="lastName" readOnly={true}
-                   value={lastName}
-                   className="bg-zinc-100 p-2 rounded"/>
+                value={lastName}
+                data-testId="lastNameInput"
+                className="bg-zinc-100 p-2 rounded"/>
             <div className="h-2"></div>
 
             <button type="button" className="bg-blue-700 text-white p-2 rounded" onClick={() => setJwt('')}>Sign Out</button>

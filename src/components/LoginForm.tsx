@@ -60,18 +60,20 @@ const LoginForm = ({ jwt, setJwt }: TLoginFormProps) => {
 
     return (
         <FcApolloProvider>
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2 justify-center">
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2 justify-center" data-testId="loginForm">
                 <label htmlFor="email" className="mt-2">Email</label>
                 <input {...register("email", fieldOptions.email)}
-                       type="text" id="email"
-                       className="bg-zinc-100 p-2 rounded"/>
+                    data-testId="emailInput"
+                    type="text" id="email"
+                    className="bg-zinc-100 p-2 rounded"/>
                 {errors.email &&
                     <div className="text-red-500 text-sm font-semibold h-4">{errors.email.message}</div>}
 
                 <label htmlFor="password" className="mt-2">Password</label>
                 <input {...register("password", fieldOptions.password)}
-                       type="password" id="password"
-                       className="bg-zinc-100 p-2 rounded"/>
+                    data-testId="passwordInput"
+                    type="password" id="password"
+                    className="bg-zinc-100 p-2 rounded"/>
                 {errors.password &&
                     <div className="text-red-500 text-sm font-semibold h-4">{errors.password.message}</div>}
 

@@ -17,4 +17,9 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+To run tests specify ``loginCredentials`` in the ``tests/home.spec.ts`` file and run command:
 
+
+```bash
+npx playwright test
+```
